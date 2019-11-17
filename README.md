@@ -1,3 +1,15 @@
+### Marlin for _BIGTREETECH SKR mini E3 V1.2_ board
+Fork of official [MarlinFirmware/Marlin/bugfix-2.0.x](https://github.com/MarlinFirmware/Marlin/tree/bugfix-2.0.x) with minimal configuration changes to work on the _BIGTREETECH SKR mini E3 V1.2_ board (basic configuration, no BLTouch):
+1. Replaced the default configuration files with Ender-3 default from [config/examples/Creality/Ender-3/](config/examples/Creality/Ender-3).
+2. Applied relevant changes from [bigtreetech/BIGTREETECH-SKR-mini-E3](https://github.com/bigtreetech/BIGTREETECH-SKR-mini-E3/blob/master/firmware/V1.2/readme.md) repository.<br>
+Note that not all of the changes are applied because some of the required modifications are obsolete due to original Marlin being frequently updated and issues resolved (e.g. there is no need for the bigtreetech's
+ TMCStepper library anymore).
+3. Other minor modifications for convenience (enable NeoPixel).
+4. Compiled to [firmware.bin](.pio/build/STM32F103RC_bigtree/firmware.bin).
+5. Tested for common issues (XYZ movement, homing, SD card, TMC drivers with M122, fan PWM with M106, buzzer with M300, NeoPixel with M150).
+
+If using BLTouch, check branch [bugfix-2.0.x_SKR-mini-E3-V1.2_BLTouch](https://github.com/bojanpotocnik/Marlin/tree/bugfix-2.0.x_SKR-mini-E3-V1.2_BLTouch). 
+
 # Marlin 3D Printer Firmware
 
 ![GitHub](https://img.shields.io/github/license/marlinfirmware/marlin.svg)
