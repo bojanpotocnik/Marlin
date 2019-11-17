@@ -1,14 +1,11 @@
-### Marlin for _BIGTREETECH SKR mini E3 V1.2_ board
-Fork of official [MarlinFirmware/Marlin/bugfix-2.0.x](https://github.com/MarlinFirmware/Marlin/tree/bugfix-2.0.x) with minimal configuration changes to work on the _BIGTREETECH SKR mini E3 V1.2_ board (basic configuration, no BLTouch):
-1. Replaced the default configuration files with Ender-3 default from [config/examples/Creality/Ender-3/](config/examples/Creality/Ender-3).
-2. Applied relevant changes from [bigtreetech/BIGTREETECH-SKR-mini-E3](https://github.com/bigtreetech/BIGTREETECH-SKR-mini-E3/blob/master/firmware/V1.2/readme.md) repository.<br>
-Note that not all of the changes are applied because some of the required modifications are obsolete due to original Marlin being frequently updated and issues resolved (e.g. there is no need for the bigtreetech's
- TMCStepper library anymore).
-3. Other minor modifications for convenience (enable NeoPixel).
+### Marlin for _BIGTREETECH SKR mini E3 V1.2_ board with BLTouch
+Fork of official [MarlinFirmware/Marlin/bugfix-2.0.x](https://github.com/MarlinFirmware/Marlin/tree/bugfix-2.0.x) with minimal configuration changes to work on the _BIGTREETECH SKR mini E3 V1.2_ board with BLTouch:
+1. Took branch [bugfix-2.0.x_SKR-mini-E3-V1.2](https://github.com/bojanpotocnik/Marlin/tree/bugfix-2.0.x_SKR-mini-E3-V1.2) as a base.
+2. Connected BLTouch.<br>
+Connect the BLTouch to the `SERVOS` and `PROBE` connectors as shown in the image below. Leave Z-endstop switch connected to the `Z-STOP` connector because it is still used for security (to prevent printer crashing the bed if the BLTouch fails). Because the Z-endstop switch is always monitored, make sure that BLTouch triggers before the Z-endstop switch is pressed. Z-endstop switch shall trigger when the nozzle actually touches the bed to prevent the Z stepper motor "bending the bed" if case the BLTouch fails.
+ ![BLTouch connection on BTT SKR Mini E3 v1.2 board](docs/BLTouch%20on%20BTT%20SKR%20Mini%20E3%20v1.2.png?raw=true)
 4. Compiled to [firmware.bin](.pio/build/STM32F103RC_bigtree/firmware.bin).
-5. Tested for common issues (XYZ movement, homing, SD card, TMC drivers with M122, fan PWM with M106, buzzer with M300, NeoPixel with M150).
-
-If using BLTouch, check branch [bugfix-2.0.x_SKR-mini-E3-V1.2_BLTouch](https://github.com/bojanpotocnik/Marlin/tree/bugfix-2.0.x_SKR-mini-E3-V1.2_BLTouch). 
+5. Tested for common issues (XYZ movement, homing using BLTouch, SD card, TMC drivers with M122, fan PWM with M106, buzzer with M300, NeoPixel with M150).
 
 # Marlin 3D Printer Firmware
 
