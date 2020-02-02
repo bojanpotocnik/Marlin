@@ -116,12 +116,14 @@ tags
 *.su
 
 # PlatformIO files/dirs
-.pio*
+.pio/*
 .pioenvs
 .piolibdeps
 .clang_complete
 .gcc-flags.json
 /lib/
+# But keep compiled binary file (can be copied to the SD Card for FW update)
+!.pio/build/STM32F103RC_bigtree/firmware.bin
 
 # Workaround for Deviot+platformio quirks
 Marlin/lib
